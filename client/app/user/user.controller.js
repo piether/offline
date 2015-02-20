@@ -13,4 +13,9 @@ angular.module('offlineRestApp')
       todoService.updateTodo(todo);
     };
 
+    $scope.online = false;
+
+    $scope.$watch('online',function() {
+      todoService.setOnline($scope.online);
+    })
   });
