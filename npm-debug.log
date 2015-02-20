@@ -1,0 +1,208 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'bower', '~g' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 warn package.json karma-chrome-launcher@0.1.7 No README data
+6 warn package.json karma-firefox-launcher@0.1.4 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'bower', null ]
+9 verbose cache add name=undefined spec="bower" args=["bower",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'bower',
+10 verbose parsed url   path: 'bower',
+10 verbose parsed url   href: 'bower' }
+11 verbose cache add [ '~g', null ]
+12 verbose cache add name=undefined spec="~g" args=["~g",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: '~g',
+13 verbose parsed url   path: '~g',
+13 verbose parsed url   href: '~g' }
+14 silly lockFile 206e3ce5-bower bower
+15 verbose lock bower /home/pieter/.npm/206e3ce5-bower.lock
+16 silly lockFile d987cedb-g ~g
+17 verbose lock ~g /home/pieter/.npm/d987cedb-g.lock
+18 silly lockFile 206e3ce5-bower bower
+19 silly lockFile 206e3ce5-bower bower
+20 silly lockFile d987cedb-g ~g
+21 silly lockFile d987cedb-g ~g
+22 verbose addNamed [ 'bower', '' ]
+23 verbose addNamed [ null, '*' ]
+24 silly lockFile 1240aab1-bower bower@
+25 verbose lock bower@ /home/pieter/.npm/1240aab1-bower.lock
+26 verbose addNamed [ '~g', '' ]
+27 verbose addNamed [ null, '*' ]
+28 silly lockFile b23e16d2-g ~g@
+29 verbose lock ~g@ /home/pieter/.npm/b23e16d2-g.lock
+30 silly addNameRange { name: 'bower', range: '*', hasData: false }
+31 silly addNameRange { name: '~g', range: '*', hasData: false }
+32 verbose request where is /~g
+33 verbose request registry https://registry.npmjs.org/
+34 verbose request id a15237f84640ba30
+35 verbose url raw /~g
+36 verbose url resolving [ 'https://registry.npmjs.org/', './~g' ]
+37 verbose url resolved https://registry.npmjs.org/~g
+38 verbose request where is https://registry.npmjs.org/~g
+39 info trying registry request attempt 1 at 10:09:54
+40 http GET https://registry.npmjs.org/~g
+41 verbose request where is /bower
+42 verbose request registry https://registry.npmjs.org/
+43 verbose url raw /bower
+44 verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+45 verbose url resolved https://registry.npmjs.org/bower
+46 verbose request where is https://registry.npmjs.org/bower
+47 info trying registry request attempt 1 at 10:09:54
+48 verbose etag "9X50Q7DME3EPZ5R3M5IYJ5R2K"
+49 http GET https://registry.npmjs.org/bower
+50 http 304 https://registry.npmjs.org/bower
+51 silly registry.get cb [ 304,
+51 silly registry.get   { date: 'Fri, 20 Feb 2015 09:09:54 GMT',
+51 silly registry.get     server: 'Apache',
+51 silly registry.get     via: '1.1 varnish',
+51 silly registry.get     'last-modified': 'Fri, 20 Feb 2015 09:09:54 GMT',
+51 silly registry.get     'cache-control': 'max-age=60',
+51 silly registry.get     etag: '"9X50Q7DME3EPZ5R3M5IYJ5R2K"',
+51 silly registry.get     age: '24',
+51 silly registry.get     'x-served-by': 'cache-ams4133-AMS',
+51 silly registry.get     'x-cache': 'HIT',
+51 silly registry.get     'x-cache-hits': '1',
+51 silly registry.get     'x-timer': 'S1424423394.848066,VS0,VE0',
+51 silly registry.get     vary: 'Accept',
+51 silly registry.get     'content-length': '0',
+51 silly registry.get     'keep-alive': 'timeout=10, max=50',
+51 silly registry.get     connection: 'Keep-Alive' } ]
+52 verbose etag https://registry.npmjs.org/bower from cache
+53 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+54 silly addNameRange versions [ 'bower',
+54 silly addNameRange   [ '0.1.0',
+54 silly addNameRange     '0.1.2',
+54 silly addNameRange     '0.1.3',
+54 silly addNameRange     '0.2.0',
+54 silly addNameRange     '0.3.0',
+54 silly addNameRange     '0.3.1',
+54 silly addNameRange     '0.3.2',
+54 silly addNameRange     '0.4.0',
+54 silly addNameRange     '0.5.0',
+54 silly addNameRange     '0.5.1',
+54 silly addNameRange     '0.6.0',
+54 silly addNameRange     '0.6.1',
+54 silly addNameRange     '0.6.2',
+54 silly addNameRange     '0.6.3',
+54 silly addNameRange     '0.6.4',
+54 silly addNameRange     '0.6.5',
+54 silly addNameRange     '0.6.6',
+54 silly addNameRange     '0.6.7',
+54 silly addNameRange     '0.6.8',
+54 silly addNameRange     '0.7.0',
+54 silly addNameRange     '0.7.1',
+54 silly addNameRange     '0.8.0',
+54 silly addNameRange     '0.8.1',
+54 silly addNameRange     '0.8.2',
+54 silly addNameRange     '0.8.3',
+54 silly addNameRange     '0.8.4',
+54 silly addNameRange     '0.8.5',
+54 silly addNameRange     '0.8.6',
+54 silly addNameRange     '0.9.0',
+54 silly addNameRange     '0.9.1',
+54 silly addNameRange     '0.9.2',
+54 silly addNameRange     '0.10.0',
+54 silly addNameRange     '1.0.0',
+54 silly addNameRange     '1.0.1',
+54 silly addNameRange     '1.0.2',
+54 silly addNameRange     '1.0.3',
+54 silly addNameRange     '1.1.0',
+54 silly addNameRange     '1.1.1',
+54 silly addNameRange     '1.1.2',
+54 silly addNameRange     '1.2.0',
+54 silly addNameRange     '1.2.1',
+54 silly addNameRange     '1.2.2',
+54 silly addNameRange     '1.2.3',
+54 silly addNameRange     '1.2.4',
+54 silly addNameRange     '1.2.5',
+54 silly addNameRange     '1.2.6',
+54 silly addNameRange     '1.2.7',
+54 silly addNameRange     '1.2.8',
+54 silly addNameRange     '1.3.0',
+54 silly addNameRange     '1.3.1',
+54 silly addNameRange     '1.3.2',
+54 silly addNameRange     '1.3.3',
+54 silly addNameRange     '1.3.4',
+54 silly addNameRange     '1.3.5',
+54 silly addNameRange     '1.3.6',
+54 silly addNameRange     '1.3.7',
+54 silly addNameRange     '1.3.8',
+54 silly addNameRange     '1.3.9',
+54 silly addNameRange     '1.3.10',
+54 silly addNameRange     '1.3.11',
+54 silly addNameRange     '1.3.12' ] ]
+55 verbose addNamed [ 'bower', '1.3.12' ]
+56 verbose addNamed [ '1.3.12', '1.3.12' ]
+57 silly lockFile 9819431c-bower-1-3-12 bower@1.3.12
+58 verbose lock bower@1.3.12 /home/pieter/.npm/9819431c-bower-1-3-12.lock
+59 silly lockFile 9819431c-bower-1-3-12 bower@1.3.12
+60 silly lockFile 9819431c-bower-1-3-12 bower@1.3.12
+61 silly lockFile 1240aab1-bower bower@
+62 silly lockFile 1240aab1-bower bower@
+63 http 404 https://registry.npmjs.org/~g
+64 verbose headers { date: 'Fri, 20 Feb 2015 09:09:55 GMT',
+64 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+64 verbose headers   'content-type': 'application/json',
+64 verbose headers   'cache-control': 'max-age=0',
+64 verbose headers   'content-length': '52',
+64 verbose headers   'accept-ranges': 'bytes',
+64 verbose headers   via: '1.1 varnish',
+64 verbose headers   age: '0',
+64 verbose headers   'x-served-by': 'cache-ams4122-AMS',
+64 verbose headers   'x-cache': 'MISS',
+64 verbose headers   'x-cache-hits': '0',
+64 verbose headers   'x-timer': 'S1424423394.847989,VS0,VE164',
+64 verbose headers   'keep-alive': 'timeout=10, max=50',
+64 verbose headers   connection: 'Keep-Alive' }
+65 silly registry.get cb [ 404,
+65 silly registry.get   { date: 'Fri, 20 Feb 2015 09:09:55 GMT',
+65 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+65 silly registry.get     'content-type': 'application/json',
+65 silly registry.get     'cache-control': 'max-age=0',
+65 silly registry.get     'content-length': '52',
+65 silly registry.get     'accept-ranges': 'bytes',
+65 silly registry.get     via: '1.1 varnish',
+65 silly registry.get     age: '0',
+65 silly registry.get     'x-served-by': 'cache-ams4122-AMS',
+65 silly registry.get     'x-cache': 'MISS',
+65 silly registry.get     'x-cache-hits': '0',
+65 silly registry.get     'x-timer': 'S1424423394.847989,VS0,VE164',
+65 silly registry.get     'keep-alive': 'timeout=10, max=50',
+65 silly registry.get     connection: 'Keep-Alive' } ]
+66 silly lockFile b23e16d2-g ~g@
+67 silly lockFile b23e16d2-g ~g@
+68 error 404 404 Not Found: ~g
+68 error 404
+68 error 404 '~g' is not in the npm registry.
+68 error 404 You should bug the author to publish it
+68 error 404 It was specified as a dependency of 'offline-rest'
+68 error 404
+68 error 404 Note that you can also install from a
+68 error 404 tarball, folder, or http url, or git url.
+69 error System Linux 3.8.0-39-generic
+70 error command "/usr/bin/node" "/usr/bin/npm" "install" "bower" "~g"
+71 error cwd /home/pieter/projects/offline
+72 error node -v v0.10.33
+73 error npm -v 1.4.28
+74 error code E404
+75 verbose exit [ 1, true ]
