@@ -19,7 +19,10 @@ angular.module('offlineRestApp')
     var service = {};
 
     service.addTodo = function(todoText) {
-      var todo = {text: todoText, complete: false};
+      createTodo({text: todoText, complete: false});
+    };
+
+    var createTodo = function(todo) {
       todos.push(todo);
       if(online) {
         return $http.post('/api/user/default/todos', todo).success(function(response) {
@@ -27,7 +30,7 @@ angular.module('offlineRestApp')
         });
       }
       persist();
-    };
+    }
 
     service.updateTodo = function(todo) {
       if(online) {
@@ -68,7 +71,7 @@ angular.module('offlineRestApp')
           if(_.isNumber(todo.id)) {
             return service.updateTodo(todo);
           } else {
-            return service.addTodo(todo.text);
+            return createTodo(todo);
           }
         })
         );
