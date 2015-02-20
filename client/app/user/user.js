@@ -3,9 +3,9 @@
 angular.module('offlineRestApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('main', {
-        url: '/main',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+      .state('user', {
+        url: '/',
+        templateUrl: 'app/user/user.html',
+        controller: 'UserCtrl'
       });
   });
