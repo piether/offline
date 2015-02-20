@@ -4,9 +4,9 @@
     <div class="col-lg-6">
       <div class="input-group">
         <span class="input-group-addon">
-          <input type="checkbox" ng-model="todo.complete">
+          <input type="checkbox" ng-model="todo.complete" ng-change="updateTodo(todo)" >
         </span>
-        <input type="text" class="form-control" ng-model="todo.text">
+        <input type="text" class="form-control" ng-model="todo.text" ng-change="updateTodo(todo)">
       </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
     <div class="col-lg-6" ng-hide="todos.length>0">No todo's yet</div>

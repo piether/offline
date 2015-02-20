@@ -9,8 +9,8 @@ angular.module('offlineRestApp')
       $scope.newTodo = '';
     };
 
-    $scope.keypressCallback = function($event) {
-      alert('Voila!');
-      $event.preventDefault();
+    $scope.updateTodo = function(todo) {
+      todoService.updateTodo(todo);
     };
+
   });
