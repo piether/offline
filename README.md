@@ -2,7 +2,7 @@
 
 AngularJS + express web app to experiment with offline capabilities. 
 
-Purpose of this experiment is to try to enrich the REST layer to support offline capabilities instead of relying on syncing on a lower level (such as CouchDB/PouchDB solutions)/
+Purpose of this experiment is to try to enrich the REST layer to support offline capabilities instead of relying on syncing on a lower level (such as CouchDB/PouchDB solutions)
 
 # Getting started
 
