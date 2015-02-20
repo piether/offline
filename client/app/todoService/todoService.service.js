@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('offlineRestApp')
-  .service('todoService', function ($http) {
+  .service('todoService', function ($http, $q) {
 
     var todos = [];
     var online;
@@ -12,7 +12,7 @@ angular.module('offlineRestApp')
       var todo = {text: todoText, complete: false};
       todos.push(todo);
       if(online) {
-        $http.post('/api/user/default/todos', todo).success(function(response) {
+        return $http.post('/api/user/default/todos', todo).success(function(response) {
           console.log(response.id);
           todo.id = response.id;
         });
@@ -24,7 +24,7 @@ angular.module('offlineRestApp')
         if(!_.isNumber(todo.id)) {
           throw "can't update without id!";
         }
-        $http.put('/api/user/default/todos/'+todo.id, todo);
+        return $http.put('/api/user/default/todos/'+todo.id, todo);
       }
     };
 
@@ -41,7 +41,7 @@ angular.module('offlineRestApp')
           todos.push(todo);
         });
       });
-    }
+    };
 
     service.setOnline = function(newOnline) {
       online = newOnline;
@@ -51,9 +51,23 @@ angular.module('offlineRestApp')
     };
 
     var syncWithServer = function() {
-      // sync updates / creates
-      todos.length = 0;
-      fetchTodos();
+      function syncUpdates() {
+        return $q.all(
+        _.map(todos,function(todo) {
+          if(_.isNumber(todo.id)) {
+            return service.updateTodo(todo);
+          } else {
+            return service.addTodo(todo.text);
+          }
+        })
+        );
+      }
+
+      syncUpdates().then(function() {
+        todos.length = 0 ;
+        fetchTodos();
+      })
+
     };
 
     return service;
