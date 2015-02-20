@@ -24,6 +24,11 @@ angular.module('offlineRestApp')
     };
 
     service.getTodos = function() {
+      $http.get('/api/user/default/todos').success(function(fetchedTodos) {
+        _.each(fetchedTodos, function(todo) {
+          todos.push(todo);
+        });
+      });
       return todos;
     };
 
