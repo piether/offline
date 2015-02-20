@@ -1,9 +1,19 @@
 'use strict';
 
 angular.module('offlineRestApp')
-  .service('todoService', function ($http, $q) {
+  .service('todoService', function ($http, $q, $window) {
 
-    var todos = [];
+    var restore = function() {
+      var data = $window.localStorage.getItem("todos");
+      if(data) {
+        return JSON.parse(data);
+      } else {
+        return [];
+      }
+    };
+
+    var todos = restore();
+
     var online;
 
     var service = {};
@@ -13,10 +23,10 @@ angular.module('offlineRestApp')
       todos.push(todo);
       if(online) {
         return $http.post('/api/user/default/todos', todo).success(function(response) {
-          console.log(response.id);
           todo.id = response.id;
         });
       }
+      persist();
     };
 
     service.updateTodo = function(todo) {
@@ -26,6 +36,7 @@ angular.module('offlineRestApp')
         }
         return $http.put('/api/user/default/todos/'+todo.id, todo);
       }
+      persist();
     };
 
     service.getTodos = function() {
@@ -36,7 +47,7 @@ angular.module('offlineRestApp')
     };
 
     var fetchTodos = function() {
-      $http.get('/api/user/default/todos').success(function(fetchedTodos) {
+      return $http.get('/api/user/default/todos').success(function(fetchedTodos) {
         _.each(fetchedTodos, function(todo) {
           todos.push(todo);
         });
@@ -65,9 +76,15 @@ angular.module('offlineRestApp')
 
       syncUpdates().then(function() {
         todos.length = 0 ;
-        fetchTodos();
-      })
+        fetchTodos().then(function() {
+          persist();
+        });
+      });
 
+    };
+
+    var persist = function() {
+      $window.localStorage.setItem("todos",JSON.stringify(todos));
     };
 
     return service;
