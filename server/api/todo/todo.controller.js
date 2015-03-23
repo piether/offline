@@ -40,6 +40,9 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   var userId = req.param('user_id');
   var todoId = req.param('todo_id');
+  if(!todos[userId]) {
+    todos[userId] = {};
+  }
   todos[userId][todoId] = req.body;
   res.status(200).end();
 };
