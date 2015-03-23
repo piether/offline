@@ -18,6 +18,8 @@ angular.module('offlineRestApp')
 
     var service = {};
 
+    var date = '20-10-2014';
+
     service.addTodo = function(todoText) {
       createTodo({text: todoText, complete: false});
     };
@@ -25,7 +27,7 @@ angular.module('offlineRestApp')
     var createTodo = function(todo) {
       todos.push(todo);
       if(online) {
-        return $http.post('/api/user/default/todos', todo).success(function(response) {
+        return $http.post('/api/'+date+'/todos', todo).success(function(response) {
           todo.id = response.id;
         });
       }
@@ -37,7 +39,7 @@ angular.module('offlineRestApp')
         if(!_.isNumber(todo.id)) {
           throw "can't update without id!";
         }
-        return $http.put('/api/user/default/todos/'+todo.id, todo);
+        return $http.put('/api/'+date+'/todos/'+todo.id, todo);
       }
       persist();
     };
@@ -50,7 +52,7 @@ angular.module('offlineRestApp')
     };
 
     var fetchTodos = function() {
-      return $http.get('/api/user/default/todos').success(function(fetchedTodos) {
+      return $http.get('/api/'+date+'/todos').success(function(fetchedTodos) {
         _.each(fetchedTodos, function(todo) {
           todos.push(todo);
         });

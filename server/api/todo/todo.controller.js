@@ -6,43 +6,43 @@ var todos = {};
 
 // Get list of todos
 exports.index = function(req, res) {
-  var userTodos = todos[req.param('user_id')];
-  if(userTodos) {
-    res.json(userTodos);
+  var todosForDate = todos[req.param('date')];
+  if(todosForDate) {
+    res.json(todosForDate);
   } else {
-    res.status(404).send("no user found with id: " + req.param('user_id'));
+    res.json([]);
   }
 };
 
-var nextId = function(userId) {
-  console.log(userId);
-  if(todos[userId]) {
-    return todos[userId].length;
+var nextId = function(date) {
+  console.log(date);
+  if(todos[date]) {
+    return todos[date].length;
   } else {
     return 0;
   }
 };
 
 exports.create = function(req, res) {
-  var userId = req.param('user_id');
+  var date = req.param('date');
 
   var todo = req.body;
-  todo.id = nextId(userId);
+  todo.id = nextId(date);
 
-  if(todos[userId]) {
-    todos[userId].push(todo);
+  if(todos[date]) {
+    todos[date].push(todo);
   } else {
-    todos[userId] = [todo];
+    todos[date] = [todo];
   }
   res.status(201).json(todo);
 };
 
 exports.update = function(req, res) {
-  var userId = req.param('user_id');
+  var date = req.param('date');
   var todoId = req.param('todo_id');
-  if(!todos[userId]) {
-    todos[userId] = {};
+  if(!todos[date]) {
+    todos[date] = {};
   }
-  todos[userId][todoId] = req.body;
+  todos[date][todoId] = req.body;
   res.status(200).end();
 };
